@@ -2,6 +2,8 @@
 
 const map = L.map('map').setView([60.189, 24.966], 11); //Luodaan kartta
 
+
+
 function piirraKartta() {
   //let data = [];
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
