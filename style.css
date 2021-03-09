@@ -1,7 +1,4 @@
-header {
-    width: 100%;
-    padding: 0px;
-}
+
 img {
     height: 150px;
     width: 100%;
@@ -11,10 +8,10 @@ main {
     flex-direction: row;
     width: 100%;
     height: 550px;
-
 }
 
 header {
+    width: 100%;
     height: 10%;
     padding: 0px;
     margin: 0px;
@@ -59,7 +56,16 @@ a {
     text-decoration: none;
     font-size: x-large;
 }
+#article {
+    width: 70%;
+    background-color: white;
+}
 
+#article2 {
+    width: 100%;
+    background-color: #ade8f4;
+    text-align: center;
+}
 article {
     width: 70%;
     background-color: white;
