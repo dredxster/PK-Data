@@ -5,7 +5,7 @@ if(container != null){
   container._leaflet_id = null;
 }
 
-const map = L.map('map').setView([60.169, 24.946], 14); //Luodaan kartta
+var map = L.map('map').setView([60.169, 24.946], 14); //Luodaan kartta
 
 function piirraKartta() {   //Piirretään kartta näytölle
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
