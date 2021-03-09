@@ -13,9 +13,9 @@ function piirraKartta() {
   }).addTo(map);
 }
 
-async function haeAsemat() {
+async function haePyorat() {
   try{
-    const vastaus = await fetch('https://opendata.arcgis.com/datasets/b2aa879ce93c4068ac63b64d71f24947_0.geojson', {method: 'GET'}); //Haetaan lämpötilat apista.
+    const vastaus = await fetch('https://opendata.arcgis.com/datasets/ee54ddf0b4db41d69410689394b7c00d_0.geojson', {method: 'GET'}); //Haetaan lämpötilat apista.
     if (!vastaus.ok) throw new Error('jokin meni pieleen');
     const asemat = await vastaus.json();
     tiedotKartalle(asemat);
@@ -31,4 +31,4 @@ function tiedotKartalle(asemat) {
 }
 
 piirraKartta();
-haeAsemat();
+haePyorat();
