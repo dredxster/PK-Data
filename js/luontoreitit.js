@@ -1,6 +1,11 @@
 'use strict';
 
-let map = L.map('map').setView([60.194392, 24.977437], 12);
+var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alusettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
+if(container != null){
+  container._leaflet_id = null;
+}
+
+var map = L.map('map').setView([60.194392, 24.977437], 12);
 
 function piirraKartta() {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,7 +13,7 @@ function piirraKartta() {
   }).addTo(map);
 }
 
-let haku = 'https://citynature.eu/api/wp/v2/places?cityid=5';
+var haku = 'https://citynature.eu/api/wp/v2/places?cityid=5';
 
 function haeSpotit() {
   fetch(haku)
