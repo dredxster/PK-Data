@@ -1,7 +1,11 @@
 'use strict';
 
-const map = L.map('map').setView([60.189, 24.966], 11); //Luodaan kartta
+var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alusettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
+if(container != null){
+  container._leaflet_id = null;
+}
 
+var map = L.map('map').setView([60.189, 24.966], 11); //Luodaan kartta
 
 
 function piirraKartta() {
