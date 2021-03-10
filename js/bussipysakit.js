@@ -2,7 +2,7 @@
 
 var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alusettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
 if(container != null){
-  container._leaflet_id = null;
+  container._leaflet_id = null;  //var käytössä, sillä let heittää errorin.
 }
 
 var map = L.map('map').setView([60.169, 24.946], 14); //Luodaan kartta.
@@ -13,9 +13,9 @@ function piirraKartta() {  //Piirretään kartta selaimeen.
   }).addTo(map);
 }
 
-async function haeAsemat() { //Haetaan apista tiedot asemista.
+async function haeAsemat() {  //Haetaan apista tiedot asemista.
   try{
-    const vastaus = await fetch('https://opendata.arcgis.com/datasets/b2aa879ce93c4068ac63b64d71f24947_0.geojson', {method: 'GET'}); //Haetaan lämpötilat apista.
+    const vastaus = await fetch('https://opendata.arcgis.com/datasets/b2aa879ce93c4068ac63b64d71f24947_0.geojson', {method: 'GET'});
     if (!vastaus.ok) throw new Error('jokin meni pieleen');
     const pysakit = await vastaus.json();
     tiedotKartalle(pysakit);
@@ -24,10 +24,10 @@ async function haeAsemat() { //Haetaan apista tiedot asemista.
   }
 }
 
-function tiedotKartalle(pysakit) { //Sijoitetaan apista kerätyt tiedot kartalle ja puretaan apista lisätietoa ponnahdusikkunaan, mikäli kohdetta klikataan.
+function tiedotKartalle(pysakit) {  //Sijoitetaan apista kerätyt tiedot kartalle ja puretaan apista lisätietoa ponnahdusikkunaan, mikäli kohdetta klikataan.
   console.log(pysakit.features);
 
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 2000; i++) {  //2000 kertaa suorituskyvyn takia.
 
     let nimi1 = pysakit.features[i].properties.NIMI1;
     let nimi2 = pysakit.features[i].properties.NIMI2;

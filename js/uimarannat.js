@@ -2,7 +2,7 @@
 
 var container = L.DomUtil.get('map');  //Katsotaan, onko kartta alusettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
 if(container != null){
-  container._leaflet_id = null;
+  container._leaflet_id = null;  //var käytössä, sillä let heittää errorin.
 }
 
 var map = L.map('map').setView([60.194392, 24.977437], 12);  //Luodaan kartta
@@ -16,7 +16,7 @@ function piirraKartta() {  //Piirretään kartta selaimeen.
 
 async function haeVedet() {  //Haetaan apista tiedot vesistä.
   try{
-    const vastaus = await fetch('https://iot.fvh.fi/opendata/uiras/uiras2_v1.json', {method: 'GET'}); //Haetaan lämpötilat apista.
+    const vastaus = await fetch('https://iot.fvh.fi/opendata/uiras/uiras2_v1.json', {method: 'GET'});
     if (!vastaus.ok) throw new Error('jokin meni pieleen');
     const vedet = await vastaus.json();
     vedetKartalle(vedet);
@@ -45,7 +45,7 @@ async function haeVedet() {  //Haetaan apista tiedot vesistä.
     vedeta[14] = vedet.sensors["70B3D5705000516A"];
     vedeta[15] = vedet.sensors["70B3D57050005037"];
 
-    for (let i = 0; i < vedeta.length; i++) {
+    for (let i = 0; i < vedeta.length; i++) {  //Uuden taulukon avulla riittää käyttää yhtä for -loopia.
 
       let lat = vedeta[i].meta.lat;
       let lon = vedeta[i].meta.lon;

@@ -2,7 +2,7 @@
 
 var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alustettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
 if(container != null){
-  container._leaflet_id = null;
+  container._leaflet_id = null;  //var käytössä, sillä let heittää errorin.
 }
 
 var map = L.map('map').setView([60.169, 24.946], 14); //Luodaan kartta

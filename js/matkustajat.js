@@ -4,7 +4,7 @@
 
 var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alusettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
 if(container != null){
-  container._leaflet_id = null;
+  container._leaflet_id = null;  //var käytössä, sillä let heittää errorin.
 }
 
 var map = L.map('map').setView([60.169, 24.946], 14); //Luodaan kartta
@@ -15,9 +15,9 @@ function piirraKartta() {  //Piirretään kartta selaimeen.
   }).addTo(map);
 }
 
-async function haeMatkustajat() { //Haetaan apista tiedot pyöristä.
+async function haeMatkustajat() { //Haetaan apista tiedot matkustajista.
   try{
-    const vastaus = await fetch('https://opendata.arcgis.com/datasets/c26bd38e37eb41eab20941cbe5dc6bd5_0.geojson', {method: 'GET'}); //Haetaan lämpötilat apista.
+    const vastaus = await fetch('https://opendata.arcgis.com/datasets/c26bd38e37eb41eab20941cbe5dc6bd5_0.geojson', {method: 'GET'});
     if (!vastaus.ok) throw new Error('jokin meni pieleen');
     const matkustajat = await vastaus.json();
     tiedotKartalle(matkustajat);
@@ -29,7 +29,7 @@ async function haeMatkustajat() { //Haetaan apista tiedot pyöristä.
 function tiedotKartalle(matkustajat) { //Sijoitetaan apista kerätyt tiedot kartalle ja puretaan apista lisätietoa ponnahdusikkunaan, mikäli kohdetta klikataan.
   console.log(matkustajat);
 
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 2000; i++) {  //2000 kertaa suorituskyvyn takia.
 
     let nimi = matkustajat.features[i].properties.Nimi;
     let nousijam = matkustajat.features[i].properties.Nousijamaa;

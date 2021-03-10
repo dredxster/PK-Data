@@ -1,11 +1,11 @@
 'use strict';
 
 //Alla olevat funktiot päivittävät päänäkymää valitun moodin mukaan.
-//!!!Skriptin poisto puuttuu
 
 function toggleParkkipaikat() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
 
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove(); //Poistetaan vanha article.
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -18,8 +18,9 @@ function toggleParkkipaikat() {
 
   console.log('parkkipaikat');
 
-  var head= document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
-  var script= document.createElement('script');
+  let head= document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
+  let script= document.createElement('script');
+  script.id= 'nscript'
   script.src= 'js/parkkipaikat.js';
   head.appendChild(script);
 }
@@ -27,6 +28,7 @@ function toggleParkkipaikat() {
 function togglePysakit() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
 
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove(); //Poistetaan vanha article.
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -39,14 +41,17 @@ function togglePysakit() {
 
   console.log('bussipysäkit');
 
-  var head= document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
-  var script= document.createElement('script');
+  let head= document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
+  let script= document.createElement('script');
+  script.id= 'nscript'
   script.src= 'js/bussipysakit.js';
   head.appendChild(script);
 }
 
 function toggleSpotit() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
+
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove();
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -61,12 +66,15 @@ function toggleSpotit() {
 
   let head = document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
   let script= document.createElement('script');
+  script.id= 'nscript'
   script.src = 'js/luontoreitit.js';
   head.appendChild(script);
 }
 
 function togglePyorat() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
+
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove();
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -81,12 +89,15 @@ function togglePyorat() {
 
   let head = document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
   let script= document.createElement('script');
+  script.id= 'nscript'
   script.src = 'js/pyorat.js';
   head.appendChild(script);
 }
 
 function toggleVedet() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
+
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove();
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -101,12 +112,15 @@ function toggleVedet() {
 
   let head = document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
   let script= document.createElement('script');
+  script.id= 'nscript'
   script.src = 'js/uimarannat.js';
   head.appendChild(script);
 }
 
 function toggleLinjat() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
+
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove();
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -121,12 +135,15 @@ function toggleLinjat() {
 
   let head = document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
   let script= document.createElement('script');
+  script.id= 'nscript'
   script.src = 'js/bussilinjat.js';
   head.appendChild(script);
 }
 
 function toggleMatkustajat() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
+
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove();
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -137,16 +154,19 @@ function toggleMatkustajat() {
   article.innerHTML = art;
   main.appendChild(article);
 
-  console.log('majakat');
+  console.log('matkustajat');
 
   let head = document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
   let script= document.createElement('script');
+  script.id= 'nscript'
   script.src = 'js/matkustajat.js';
   head.appendChild(script);
 }
 
 function toggleautovahti() {
   const main = document.querySelector("main"); //Merkitään main-elementti muistiin.
+
+  document.getElementById("nscript").remove(); //Poistetaan vanha scripti tag sivuston suortiuskyvyn ylläpitämiseksi.
   document.getElementById("article").remove();
 
   let article = document.createElement('article'); //Luodaan uusi article ja syötetään siihen pohjustavat tiedot.
@@ -157,10 +177,11 @@ function toggleautovahti() {
   article.innerHTML = art;
   main.appendChild(article);
 
-  console.log('ilmanlaatu');
+  console.log('autovahti');
 
   let head = document.getElementsByTagName('head')[0]; //Luodaan uusi skripti, joka luotaessa ajaa sen sisällön.
   let script= document.createElement('script');
+  script.id= 'nscript'
   script.src = 'js/autovahti.js';
   head.appendChild(script);
 }
