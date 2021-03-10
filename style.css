@@ -55,6 +55,7 @@ a {
     font-size: x-large;
 }
 #article {
+    height: 104.5%;
     width: 70%;
     background-color: white;
 }
@@ -80,6 +81,11 @@ button {
     color: white;
     text-decoration: none;
     font-size: x-large;
+}
+
+#apil {
+    color: black;
+    font-size: medium;
 }
 
 @media screen and (max-width: 1000px) {

@@ -1,6 +1,6 @@
 'use strict';
 
-var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alusettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
+var container = L.DomUtil.get('map'); //Katsotaan, onko kartta alustettu ja mikäli on, poistetaan alustus/alustetaan uudestaan.
 if(container != null){
   container._leaflet_id = null;
 }
